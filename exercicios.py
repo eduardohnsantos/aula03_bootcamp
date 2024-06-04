@@ -20,17 +20,46 @@ else:
 # Os dados incluem medições de temperatura. Você precisa classificar cada leitura
 # como 'Baixa', 'Normal' ou 'Alta'. Considerando que:
 
+temperatura = 22  # Exemplo de valor, substitua com input do usuário se necessário
+
+if temperatura < 18:
+    print("Baixa")
+elif 18 <= temperatura <= 26:
+    print("Normal")
+else:
+    print("Alta")
+
 ### Exercício 3: Filtragem de Logs por Severidade
 # Você está analisando logs de uma aplicação e precisa filtrar mensagens
 # com severidade 'ERROR'. Dado um registro de log em formato de dicionário
 # como `log = {'timestamp': '2021-06-23 10:00:00', 'level': 'ERROR', 'message': 'Falha na conexão'}`,
 # escreva um programa que imprima a mensagem se a severidade for 'ERROR'.
 
+log = {
+    "timestamp": "2021-06-23 10:00:00",
+    "level": "ERROR",
+    "message": "Falha na conexão",
+}
+
+if log["level"] == "ERROR":
+    print(log["message"])
+
 ### Exercício 4: Validação de Dados de Entrada
 # Antes de processar os dados de usuários em um sistema de recomendação,
 # você precisa garantir que cada usuário tenha idade entre 18 e 65 anos e tenha
 # fornecido um email válido. Escreva um programa que valide essas condições
 # e imprima "Dados de usuário válidos" ou o erro específico encontrado.
+
+idade = 25  # Exemplo de valor, substitua com input do usuário se necessário
+email = "usuario@exemplo.com"  # Exemplo de valor, substitua com input do usuário se necessário
+
+if not 18 <= idade <= 65:
+    print("Idade fora do intervalo permitido")
+elif "@" not in email or "." not in email:
+    print("Email inválido")
+else:
+    print("Dados de usuário válidos")
+
 
 ### Exercício 5: Detecção de Anomalias em Dados de Transações
 # Você está trabalhando em um sistema de detecção de fraude e precisa identificar
